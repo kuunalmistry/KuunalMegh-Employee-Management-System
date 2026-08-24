@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Employee{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card table-card">
+
+            <div class="card-body p-4">
+
+                <h3 class="fw-bold mb-1">
+                    Edit Employee
+                </h3>
+
+                <p class="text-muted mb-4">
+                    Update the employee information.
+                </p>
+
+                <form method="POST">
+
+                    <div class="row g-3">
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Employee ID
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                value="{{ employee.EmployeeID }}"
+                                disabled
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Employee Name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="employee_name"
+                                class="form-control"
+                                value="{{ employee.EmployeeName }}"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-12">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                value="{{ employee.Email }}"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Department
+                            </label>
+
+                            <input
+                                type="text"
+                                name="department"
+                                class="form-control"
+                                value="{{ employee.Department }}"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Designation
+                            </label>
+
+                            <input
+                                type="text"
+                                name="designation"
+                                class="form-control"
+                                value="{{ employee.Designation }}"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Salary
+                            </label>
+
+                            <input
+                                type="number"
+                                name="salary"
+                                class="form-control"
+                                value="{{ employee.Salary }}"
+                                step="0.01"
+                                min="0"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <button
+                            type="submit"
+                            class="btn btn-success">
+                            Update Employee
+                        </button>
+
+                        <a
+                            href="{{ url_for('index') }}"
+                            class="btn btn-outline-secondary">
+                            Cancel
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

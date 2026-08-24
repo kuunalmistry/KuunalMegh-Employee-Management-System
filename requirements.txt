@@ -1,0 +1,4 @@
+Flask
+pyodbc
+gunicorn
+python-dotenv
